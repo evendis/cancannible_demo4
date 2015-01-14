@@ -1,0 +1,24 @@
+.alert.alert-info
+  This is the complete list of demo users.
+  No access permissions are applied here for the purposes of the demo (so you can see what is setup).
+  Of course, in a real application, this resource view would be subject to access controls.
+
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th Username
+      %th Description
+      %th Company
+      %th Group
+      %th Roles
+
+  %tbody
+    - collection.each do |row|
+      %tr
+        %td.test_id= row.id
+        %td= row.username
+        %td= row.description
+        %td= row.customer_name
+        %td= row.group_name
+        %td= row.role_names_list

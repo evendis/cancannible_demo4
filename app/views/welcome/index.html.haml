@@ -1,0 +1,12 @@
+.jumbotron
+  %h1 Cancannible Demo for Rails 4
+  %p
+    A Rails 4.2.x application to demonstrate the use of the cancannible gem.
+  %p
+    Cancannible is a gem that extends CanCan with a range of capabilities:
+    %ul
+      %li automatic permissions storage in a database
+      %li export CanCan methods to the model layer (so that permissions can be applied in model methods, and easily set in a test case)
+      %li permissions inheritance (so that, for example, a User can inherit permissions from Roles and/or Groups)
+      %li caching of abilities (so that they don't need to be recalculated on each web request)
+      %li general-purpose access refinements (so that, for example, CanCan will automatically enforce multi-tenant or other security restrictions)

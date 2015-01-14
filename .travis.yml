@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.1.5
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql postgres -c "create role cancannible_demo4 with login superuser" -U postgres
+  - bundle exec rake db:setup

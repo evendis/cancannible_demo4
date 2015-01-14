@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: one
+
+two:
+  username: two
+
+group_user:
+  username: group_user
+  group_id: 2
+
+customer_user:
+  username: customer_user
+  customer_id: 2

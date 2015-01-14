@@ -1,0 +1,23 @@
+.alert.alert-info
+  This view of Articles is automatically restricted by cancannible.
+  %ul
+    %li The 'admin_user' can see all the records
+    %li The 'customer_user' will only see articles tagged for their customer account specifically, or for any customer (customer_id is null).
+    %li The 'group_user' will only see articles tagged for their group specifically, or for any group (group_id is null).
+    %li The 'limited_user' account has been given access to one specific article.
+
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th Title
+      %th Group
+      %th Customer
+
+  %tbody
+    - collection.each do |row|
+      %tr
+        %td.test_id= row.id
+        %td= row.title
+        %td= row.group.try(:name)
+        %td= row.customer.try(:name)

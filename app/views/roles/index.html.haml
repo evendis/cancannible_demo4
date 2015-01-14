@@ -1,0 +1,16 @@
+.alert.alert-info
+  This is the complete list of demo roles.
+  No access permissions are applied here for the purposes of the demo (so you can see what is setup).
+  Of course, in a real application, this resource view would be subject to access controls.
+
+%table.table
+  %thead
+    %tr
+      %th ID
+      %th Name
+
+  %tbody
+    - collection.each do |row|
+      %tr
+        %td.test_id= row.id
+        %td= row.name

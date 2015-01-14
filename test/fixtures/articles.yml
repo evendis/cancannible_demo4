@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  title: one
+  body: article body
+
+for_group:
+  id: 2
+  title: for_group
+  body: article body
+  group_id: 2

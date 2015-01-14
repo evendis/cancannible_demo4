@@ -1,0 +1,26 @@
+<div class="alert alert-info">
+  This view of Customer records is automatically restricted by cancannible.
+  <ul>
+    <li>The 'admin_user' can see all the records</li>
+    <li>The 'group_user' has no permissions (and will not be able to even load this page).</li>
+    <li>The 'limited_user' account has been given access to one specific customer.</li>
+    <li>The 'customer_user' will only see their own customer record.</li>
+  </ul>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- collection.each do |customer| %>
+    <tr>
+      <td class="test_id"><%= customer.id %></td>
+      <td><%= customer.name %></td>
+    </tr>
+    <%- end %>
+  </tbody>
+</table>

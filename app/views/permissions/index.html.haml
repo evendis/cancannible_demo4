@@ -1,0 +1,23 @@
+:ruby
+  display_attributes = %w(permissible_id permissible_type ability asserted resource_id resource_type)
+
+.alert.alert-info
+  This is the complete list of permissions stored in the database.
+  These are the permissions that setup with cancannible, and read/applied automatically through CanCan.
+  Of course, in a real application, you wouldn't show this (except perhaps to administrators).
+
+%table.table
+  %thead
+    %tr
+      %th ID
+      - display_attributes.each do |attribute_name|
+        %th= attribute_name
+
+  %tbody
+    - collection.each do |row|
+      %tr
+        %td.test_id= row.id
+        - display_attributes.each do |attribute_name|
+          %td= row.send attribute_name
+
+
