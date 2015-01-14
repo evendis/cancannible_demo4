@@ -3,7 +3,7 @@
 
 A Rails 4.2.x application that demonstrates how to use [Cancannible gem](https://github.com/evendis/cancannible) for role-based access permissions.
 
-This can be used interactively at [cancannibledemo4.evendis.com](http://cancannibledemo4.evendis.com/).
+This can be used interactively at [cancannibledemo4.evendis.com](http://cancannibledemo4.evendis.com).
 
 See [cancannibledemo.evendis.com](http://cancannibledemo.evendis.com/) for the Rails 3.x version of the demo,
 with source also on [GitHub](https://github.com/evendis/cancannible_demo).
