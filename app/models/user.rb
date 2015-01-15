@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   include Cancannible::Grantee
   inherit_permissions_from :roles, :group
 
+  default_scope { order(:id) }
 
   class << self
 
