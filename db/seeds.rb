@@ -27,7 +27,7 @@ customer_user = User.create( common_user_attrs.merge( username: 'customer_user',
 admin_user.roles << admin_role
 customer_user.roles << customer_role
 
-article_1 = Article.create( title: 'No Group or Customer' )
+article_1 = Article.create( title: 'Any Group or Customer' )
 article_2 = Article.create( title: 'Article 1 For Article Readers Group', group: article_readers_group )
 article_3 = Article.create( title: 'Article 2 For General Group', group: general_group )
 article_4 = Article.create( title: 'For CustomerA', customer: customer_a )
