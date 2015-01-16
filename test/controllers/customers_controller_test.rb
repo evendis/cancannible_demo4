@@ -27,7 +27,7 @@ class CustomersControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 2
+    assert_select 'td.test_id', Customer.count
   end
 
   test "when full permissions on Customer via Role, they should see all customers" do
@@ -37,7 +37,7 @@ class CustomersControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 2
+    assert_select 'td.test_id', Customer.count
   end
 
   test "when full permissions on Customer via Group, they should see all customers" do
@@ -47,7 +47,7 @@ class CustomersControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 2
+    assert_select 'td.test_id', Customer.count
   end
 
   test "when no customer but limited Customer permissions, they should only see selected customers" do
@@ -55,7 +55,7 @@ class CustomersControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 1
+    assert_select 'td.test_id', {count: 1, text: @other_customer.id.to_s}
   end
 
   test "when a customer and full Customer permissions, they should only see their own customer record" do
@@ -64,7 +64,7 @@ class CustomersControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 1
+    assert_select 'td.test_id', {count: 1, text: @user.customer.id.to_s}
   end
 
 

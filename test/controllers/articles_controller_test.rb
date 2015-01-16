@@ -29,7 +29,7 @@ class ArticlesControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 1
+    assert_select 'td.test_id', {count: 1, text: @article.id.to_s}
   end
 
   test "when no group but Article permissions via Role, they should see articles that don't have a group" do
@@ -39,7 +39,7 @@ class ArticlesControllerTest < ActionController::TestCase
     sign_in @user
     get :index
     assert_response :success
-    assert_select 'td.test_id', 1
+    assert_select 'td.test_id', {count: 1, text: @article.id.to_s}
   end
 
   test "when has Article permissions and group, they should see group articles and those that don't have a group" do
@@ -48,6 +48,8 @@ class ArticlesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_select 'td.test_id', 2
+    assert_select 'td.test_id', @article.id.to_s
+    assert_select 'td.test_id', @article_for_group.id.to_s
   end
 
   test "when has Article permissions via group, they should see group articles and those that don't have a group" do
@@ -56,6 +58,8 @@ class ArticlesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_select 'td.test_id', 2
+    assert_select 'td.test_id', @article.id.to_s
+    assert_select 'td.test_id', @article_for_group.id.to_s
   end
 
 
